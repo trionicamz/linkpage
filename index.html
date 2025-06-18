@@ -2,38 +2,53 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Minha Linkpage com PDF</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flávio Canudo - LinkPage</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <img src="perfil.jpg" alt="Seu Perfil" class="profile-pic" />
-    <h1 class="name">Seu Nome</h1>
-    <p class="subtitle">Clique abaixo para carregar e abrir um PDF</p>
 
-    <div class="links">
-      <input type="file" id="pdfUpload" accept="application/pdf" class="btn-file" />
-      <button onclick="abrirPDF()" class="btn btn-pdf">Abrir PDF</button>
+  <div class="container">
+
+    <!-- Logo -->
+    <img src="logo.png" alt="Logo" class="logo" />
+
+    <!-- Nome e cargo -->
+    <h1>Flávio Canudo</h1>
+    <p class="cargo">Director Comercial</p>
+
+    <!-- Telefones Pessoais -->
+    <a href="tel:+258823071419" class="btn">📞 +258 823071419</a>
+    <a href="tel:+258847201122" class="btn">📞 +258 847201122</a>
+
+    <!-- Email Pessoal -->
+    <a href="mailto:fcanudo@trionicamz.com" class="btn">📧 fcanudo@trionicamz.com</a>
+
+    <!-- Endereço -->
+    <p class="endereco">📍 Bairro da Costa do Sol ,Av. Major General Candido Mondlane, N°2007</p>
+ 
+
+    <!-- Mapa -->
+    <div class="mapa-container">
+      <iframe
+        src="https://www.google.com/maps?q=Av.+Major+General+Candido+Mondlane,+Maputo,+Mozambique&output=embed"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
+    <!-- Telefones Gerais -->
+    <a href="tel:+258846974444" class="btn">📞 +258 846974444</a>
+    <a href="tel:+258820660201" class="btn">📞 +258 820660201</a>
+
+    <!-- Email Geral -->
+    <a href="mailto:geral@trionicamz.com" class="btn">📧 geral@trionicamz.com</a>
+
+    <!-- Links -->
+    <a href="https://trionicamz.com" target="_blank" class="btn">🌐 Nosso Website</a>
+    <a href="sobre.html" class="btn">ℹ️ Sobre Nós!</a>
+
   </div>
 
-  <script>
-    let arquivoPDF;
-
-    document.getElementById('pdfUpload').addEventListener('change', function(event) {
-      arquivoPDF = event.target.files[0];
-    });
-
-    function abrirPDF() {
-      if (arquivoPDF) {
-        const fileURL = URL.createObjectURL(arquivoPDF);
-        window.open(fileURL, '_blank');
-      } else {
-        alert('Por favor, selecione um arquivo PDF primeiro.');
-      }
-    }
-  </script>
 </body>
 </html>
-
